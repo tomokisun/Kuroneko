@@ -5,7 +5,7 @@ iOSデバイスとアプリケーションの情報を収集し、Key-Value形�
 ## 特徴
 
 - 📱 iOS 17.0以上対応
-- 🔍 30以上の情報項目を取得可能
+- 🔍 26の情報項目を取得可能
 - 🎯 必要な項目のみを選択して取得
 - 📦 カテゴリ単位での取得に対応
 - ✨ カスタムフィールドの追加機能
@@ -43,7 +43,7 @@ print(allInfo)
 let selectedInfo = kuroneko.collect(items: [
   .deviceType,
   .appVersion,
-  .batteryLevel
+  .systemVersion
 ])
 print(selectedInfo)
 ```
@@ -92,11 +92,6 @@ print(infoWithCustomFields)
 - `available_storage`: 利用可能ストレージ（GB）
 - `processor_count`: プロセッサコア数
 
-### バッテリー情報 (Battery)
-- `battery_level`: バッテリー残量（%）
-- `battery_state`: 充電状態
-- `low_power_mode`: 低電力モード状態
-
 ### ネットワーク情報 (Network)
 - `network_type`: ネットワーク種別
 - `carrier_name`: キャリア名
@@ -117,10 +112,6 @@ print(infoWithCustomFields)
 - `screen_scale`: 画面スケール
 - `user_interface_style`: ダーク/ライトモード
 
-### セキュリティ情報 (Security)
-- `biometric_type`: 生体認証タイプ
-- `jailbreak_status`: 脱獄状態
-
 ## 出力例
 
 ```
@@ -136,11 +127,6 @@ app_version: 1.98.0
 app_build: 123
 bundle_identifier: com.example.app
 app_name: MyApp
-
-// Battery
-battery_level: 85%
-battery_state: Unplugged
-low_power_mode: Disabled
 
 // Custom Fields
 user_id: 12345
